@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tură</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main id="app">
+    <div id="bigName" class="big-name">—</div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="label">Astăzi</div>
+        <div id="todayDate" class="value">—</div>
+      </div>
+      <div class="card">
+        <div class="label">Referință</div>
+        <div id="refDate" class="value">—</div>
+      </div>
+      <div class="card">
+        <div class="label">Persoană referință</div>
+        <div id="refPerson" class="value">—</div>
+      </div>
+      <div class="card">
+        <div class="label">Schimbă în</div>
+        <div id="switchDay" class="value">vineri</div>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button id="btnSettings">Modifică setări</button>
+      <button id="btnCheckOther">Verifică altă dată</button>
+    </div>
+  </main>
+
+  <!-- Settings modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-inner">
+      <h2>Setări</h2>
+      <label>Data referință (YYYY-MM-DD)
+        <input id="inputRefDate" type="date">
+      </label>
+      <label>Persoană referință
+        <input id="inputRefPerson" type="text" placeholder="Nuța">
+      </label>
+      <label>Nume persoană A
+        <input id="inputNameA" type="text" placeholder="Nuța">
+      </label>
+      <label>Nume persoană B
+        <input id="inputNameB" type="text" placeholder="Angi">
+      </label>
+      <label>Zi schimb (ex: vineri)
+        <select id="inputSwitchDay">
+          <option value="0">duminică</option>
+          <option value="1">luni</option>
+          <option value="2">marți</option>
+          <option value="3">miercuri</option>
+          <option value="4">joi</option>
+          <option value="5" selected>vineri</option>
+          <option value="6">sâmbătă</option>
+        </select>
+      </label>
+
+      <div class="modal-actions">
+        <button id="saveSettings">Salvează</button>
+        <button id="closeSettings">Închide</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Date check modal -->
+  <div id="checkModal" class="modal hidden">
+    <div class="modal-inner">
+      <h2>Verifică o dată</h2>
+      <label>Data
+        <input id="inputCheckDate" type="date">
+      </label>
+      <div style="margin-top:12px;">
+        <button id="doCheck">Verifică</button>
+        <button id="closeCheck">Închide</button>
+      </div>
+      <div id="checkResult" style="margin-top:14px; font-size:20px; text-align:center;"></div>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
